@@ -1,0 +1,15 @@
+<div class="tiles-container">
+    <div class="ras-tile-container" *ngFor="let tileData of tilesData" (click)="tileClicked(tileData.id)">
+        <div class="ras-tile">
+            <div class="title">
+                {{tileData.title}}
+            </div>
+            <div class="tile-infos">
+                <div class="tile-info" *ngFor="let info of tileData.infos">
+                    <span class="count">{{info.count}}</span>
+                    <span class="info">{{info.info}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+@mixin keyframes($ZoomInOut) {
+  @keyframes ZoomInOut {
+    form {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.tiles-container {
+  display: flex;
+  flex-flow: row wrap;
+
+  .ras-tile-container:hover {
+    animation: ZoomInOut 1s infinite alternate;
+  }
+
+  .ras-tile-container {
+    box-shadow: 0px 0px 8px 1px #7d7d7d;
+    height: 180px;
+    width: 180px;
+    margin: 10px;
+    flex: auto;
+
+    /* width */
+    ::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #cac9c9;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #afadad;
+    }
+
+    .ras-tile {
+      padding: 10px;
+      height: calc(100% - 20px);
+
+      .title {
+        line-height: 40px;
+        font-size: 22px;
+        margin-bottom: 10px;
+
+        .tile-infos {
+          height: calc(100% - 50px);
+          overflow: auto;
+          border-left-style: groove;
+
+          .tile-info {
+            padding: 5px;
+            white-space: nowrap;
+
+            .count {
+              font-weight: bold;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
