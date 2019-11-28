@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Tile } from './tile.model';
 
 @Component({
-  selector: 'ras-tile',
+  selector: 'ras-tiles',
   templateUrl: './tile.component.html',
   styleUrls: ['./tile.component.scss']
 })

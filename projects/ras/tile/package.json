@@ -1,6 +1,6 @@
 {
-  "name": "@ras/tile",
-  "version": "0.0.1",
+  "name": "ras-tiles",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.0",
     "@angular/core": "^8.2.0"

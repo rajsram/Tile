@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
+    <!-- <style>
         .tiles-container {
             display: flex;
             flex-flow: row wrap;
@@ -48,7 +48,6 @@
         .ras-tile .tile-infos {
             height: calc(100% - 50px);
             overflow: auto;
-            border-left-style: groove;
         }
 
         .tile-info:not(:last-child) {
@@ -58,6 +57,7 @@
         .ras-tile .tile-info {
             padding: 5px;
             white-space: nowrap;
+            border-left: 1.5px solid #bdbaba;
         }
 
         .ras-tile .tile-info .count {
@@ -84,6 +84,97 @@
         /* Handle on hover */
         .ras-tile-container ::-webkit-scrollbar-thumb:hover {
             background: #afadad;
+        }
+    </style> -->
+    <style>
+        @-webkit-keyframes ZoomInOut {
+            0% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(1.1)
+            }
+        }
+
+        @keyframes ZoomInOut {
+            0% {
+                transform: scale(1)
+            }
+
+            100% {
+                transform: scale(1.1)
+            }
+        }
+
+        .tiles-container {
+            display: flex;
+            flex-flow: row wrap
+        }
+
+        .tiles-container .ras-tile-container:hover {
+            -webkit-animation: 1s infinite alternate ZoomInOut;
+            animation: 1s infinite alternate ZoomInOut
+        }
+
+        .tiles-container .ras-tile-container {
+            box-shadow: 0 0 8px 1px #7d7d7d;
+            height: 180px;
+            width: 180px;
+            min-width: 180px;
+            max-width: 400px;
+            margin: 10px;
+            flex: auto;
+            border-radius: 5px;
+            background-color: #fff
+        }
+
+        .tiles-container .ras-tile-container ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px
+        }
+
+        .tiles-container .ras-tile-container ::-webkit-scrollbar-track {
+            background: #f1f1f1
+        }
+
+        .tiles-container .ras-tile-container ::-webkit-scrollbar-thumb {
+            background: #cac9c9
+        }
+
+        .tiles-container .ras-tile-container ::-webkit-scrollbar-thumb:hover {
+            background: #afadad
+        }
+
+        .tiles-container .ras-tile-container .ras-tile {
+            padding: 10px;
+            height: calc(100% - 20px)
+        }
+
+        .tiles-container .ras-tile-container .ras-tile .tile-infos {
+            height: calc(100% - 50px);
+            overflow: auto
+        }
+
+        .tiles-container .ras-tile-container .ras-tile .tile-infos .tile-info {
+            padding: 5px;
+            white-space: nowrap;
+            border-left: 1.5px solid #bdbaba
+        }
+
+        .tiles-container .ras-tile-container .ras-tile .tile-infos .tile-info .count {
+            font-weight: 700;
+            margin-right: 5px
+        }
+
+        .tiles-container .ras-tile-container .ras-tile .tile-infos .tile-info:not(:last-child) {
+            border-bottom: 1.5px solid #bdbaba
+        }
+
+        .tiles-container .ras-tile-container .ras-tile .title {
+            line-height: 40px;
+            font-size: 22px;
+            margin-bottom: 10px
         }
     </style>
 </head>

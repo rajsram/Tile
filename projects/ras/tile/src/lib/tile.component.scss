@@ -1,11 +1,23 @@
 @mixin keyframes($ZoomInOut) {
+  @-webkit-keyframes ZoomInOut {
+    @content;
+  }
+  @-moz-keyframes ZoomInOut {
+    @content;
+  }
+  @-o-keyframes ZoomInOut {
+    @content;
+  }
   @keyframes ZoomInOut {
-    form {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(1.1);
-    }
+    @content;
+  }
+}
+@include keyframes(ZoomInOut) {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
   }
 }
 
@@ -21,8 +33,12 @@
     box-shadow: 0px 0px 8px 1px #7d7d7d;
     height: 180px;
     width: 180px;
+    min-width: 180px;
+    max-width: 400px;
     margin: 10px;
     flex: auto;
+    border-radius: 5px;
+    background-color: #fff;
 
     /* width */
     ::-webkit-scrollbar {
@@ -49,26 +65,35 @@
       padding: 10px;
       height: calc(100% - 20px);
 
+      .tile-infos {
+        height: calc(100% - 50px);
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .tile-info {
+          padding: 5px;
+          white-space: nowrap;
+          border-left: 1.5px solid #bdbaba;
+          width: 100%;
+          box-shadow: inset 4px -7px 12px 6px #c1c0c0;
+          border-radius: 5px;
+
+          .count {
+            font-weight: bold;
+            margin-right: 5px;
+          }
+        }
+
+        .tile-info:not(:last-child) {
+          border-bottom: 1.5px solid #bdbaba;
+        }
+      }
       .title {
         line-height: 40px;
         font-size: 22px;
         margin-bottom: 10px;
-
-        .tile-infos {
-          height: calc(100% - 50px);
-          overflow: auto;
-          border-left-style: groove;
-
-          .tile-info {
-            padding: 5px;
-            white-space: nowrap;
-
-            .count {
-              font-weight: bold;
-              margin-right: 5px;
-            }
-          }
-        }
       }
     }
   }
