@@ -88,4 +88,4 @@ import { Tile } from 'ras-tiles/lib/tile.model';
 
 ### Result
 
-<img src="ras-tiles.png" alt="ras-tiles usage"> 
+<img src="ras-tiles.PNG" alt="ras-tiles usage"> 
