@@ -84,3 +84,8 @@ import { Tile } from 'ras-tiles/lib/tile.model';
 ```html
 <ras-tiles [tilesData]="tilesData" (tileClick)="tileClicked($event)"></ras-tiles>
 ```
+
+
+### Result
+
+<img src="ras-tiles.png" alt="ras-tiles usage"> 
